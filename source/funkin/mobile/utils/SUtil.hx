@@ -58,7 +58,7 @@ class SUtil
 
 		if (Permissions.getGrantedPermissions().contains(PermissionsList.READ_EXTERNAL_STORAGE) || Permissions.getGrantedPermissions().contains(PermissionsList.WRITE_EXTERNAL_STORAGE))
 		{*/
-			if (!FileSystem.exists(path)
+			if (!FileSystem.exists(path))
 				FileSystem.createDirectory(path);
 
 			if (!FileSystem.exists(SUtil.getPath() + 'assets') && !FileSystem.exists(SUtil.getPath() + 'mods'))
