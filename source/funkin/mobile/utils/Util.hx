@@ -31,13 +31,10 @@ class Util {
     public static function getPermissions()
     {
        if(VERSION.SDK_INT >= 33){
-         if (currentDirectory == getStorage.data) {
          perms.push("android.permission.READ_MEDIA_VIDEO");
 		     perms.push("android.permission.READ_MEDIA_IMAGES");
          perms.push("android.permission.READ_MEDIA_AUDIO");
-         } elseif (currentDirectory == getStorage.external) {
          Settings.requestSetting('MANAGE_APP_ALL_FILES_ACCESS_PERMISSION');
-         }
       } else {
           perms.push("android.permission.WRITE_EXTERNAL_STORAGE");
           perms.push("android.permission.READ_EXTERNAL_STORAGE");
