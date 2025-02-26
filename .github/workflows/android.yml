@@ -37,6 +37,8 @@ jobs:
       - name: Installing/Updating libraries
         run: |
           haxe -cp commandline -D analyzer-optimize --run Main setup -s
+          haxelib remove hxcpp
+          haxelib git hxcpp https://github.com/HaxeFoundation/hxcpp
           haxelib run lime rebuild hxcpp
       - name: Configure Android
         run: |
