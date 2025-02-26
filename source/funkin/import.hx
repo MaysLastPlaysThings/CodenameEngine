@@ -14,6 +14,7 @@ import funkin.backend.scripting.EventManager;
 #if mobile
 import funkin.mobile.backend.*;
 import funkin.mobile.utils.*;
+#end
 
 import openfl.utils.Assets;
 
