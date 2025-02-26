@@ -135,7 +135,7 @@ class Controls extends FlxActionSet
 	public var UP(get, set):Bool;
 
 	inline function get_UP()
-		return _up.check();
+		return _up.check() || TouchInput.isSwipe('up');
 
 	inline function set_UP(val)
 		return @:privateAccess _up._checked = val;
@@ -143,7 +143,7 @@ class Controls extends FlxActionSet
 	public var LEFT(get, set):Bool;
 
 	inline function get_LEFT()
-		return _left.check();
+		return _left.check() || TouchInput.isSwipe('left');
 
 	inline function set_LEFT(val)
 		return @:privateAccess _left._checked = val;
@@ -151,7 +151,7 @@ class Controls extends FlxActionSet
 	public var RIGHT(get, set):Bool;
 
 	inline function get_RIGHT()
-		return _right.check();
+		return _right.check() || TouchInput.isSwipe('right');
 
 	inline function set_RIGHT(val)
 		return @:privateAccess _right._checked = val;
@@ -159,7 +159,7 @@ class Controls extends FlxActionSet
 	public var DOWN(get, set):Bool;
 
 	inline function get_DOWN()
-		return _down.check();
+		return _down.check() || TouchInput.isSwipe('down');
 
 	inline function set_DOWN(val)
 		return @:privateAccess _down._checked = val;
@@ -167,7 +167,7 @@ class Controls extends FlxActionSet
 	public var UP_P(get, set):Bool;
 
 	inline function get_UP_P()
-		return _upP.check();
+		return _upP.check() || TouchInput.isSwipe('up');
 
 	inline function set_UP_P(val)
 		return @:privateAccess _upP._checked = val;
@@ -175,7 +175,7 @@ class Controls extends FlxActionSet
 	public var LEFT_P(get, set):Bool;
 
 	inline function get_LEFT_P()
-		return _leftP.check();
+		return _leftP.check() || TouchInput.isSwipe('left');
 
 	inline function set_LEFT_P(val)
 		return @:privateAccess _leftP._checked = val;
@@ -183,7 +183,7 @@ class Controls extends FlxActionSet
 	public var RIGHT_P(get, set):Bool;
 
 	inline function get_RIGHT_P()
-		return _rightP.check();
+		return _rightP.check() || TouchInput.isSwipe('right');
 
 	inline function set_RIGHT_P(val)
 		return @:privateAccess _rightP._checked = val;
@@ -191,7 +191,7 @@ class Controls extends FlxActionSet
 	public var DOWN_P(get, set):Bool;
 
 	inline function get_DOWN_P()
-		return _downP.check();
+		return _downP.check() || TouchInput.isSwipe('down');
 
 	inline function set_DOWN_P(val)
 		return @:privateAccess _downP._checked = val;
@@ -335,7 +335,7 @@ class Controls extends FlxActionSet
 	public var BACK(get, set):Bool;
 
 	inline function get_BACK()
-		return _back.check();
+		return _back.check() || TouchInput.BACK();
 
 	inline function set_BACK(val)
 		return @:privateAccess _back._checked = val;
@@ -343,7 +343,7 @@ class Controls extends FlxActionSet
 	public var PAUSE(get, set):Bool;
 
 	inline function get_PAUSE()
-		return _pause.check();
+		return _pause.check() || TouchInput.BACK();
 
 	inline function set_PAUSE(val)
 		return @:privateAccess _pause._checked = val;
