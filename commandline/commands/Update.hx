@@ -14,7 +14,7 @@ class Update {
 		if (!FileSystem.exists('.haxelib'))
 			FileSystem.createDirectory('.haxelib');
 
-		var filename = #if desktop "./libs.xml" #else "./libs-android.xml";
+		var filename = #if desktop "./libs.xml" #else "./libs-android.xml" #end;
 		var isSilent = false;
 		for(arg in args) {
 			if (arg.startsWith("--lib=")) {
