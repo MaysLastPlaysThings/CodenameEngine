@@ -73,7 +73,7 @@ class Main extends Sprite
 
 		CrashHandler.init();
 
-      Util.getMobilePermissions();
+        Util.getMobilePermissions();
 
 		addChild(game = new FunkinGame(gameWidth, gameHeight, MainState, Options.framerate, Options.framerate, skipSplash, startFullscreen));
 
@@ -137,12 +137,12 @@ class Main extends Sprite
 		#if (sys && TEST_BUILD)
 			trace("Used cne test / cne build. Switching into source assets.");
 			#if MOD_SUPPORT
-				ModsFolder.modsPath = './${pathBack}mods/';
-				ModsFolder.addonsPath = './${pathBack}addons/';
+				ModsFolder.modsPath = #if desktop './${pathBack}mods/' #else Sys.getCwd() + '${pathBack}mods/' #end;
+				ModsFolder.addonsPath = #if desktop './${pathBack}addons/' #else Sys.getCwd() + '${pathBack}addons/' #end;
 			#end
-			Paths.assetsTree.__defaultLibraries.push(ModsFolder.loadLibraryFromFolder('assets', './${pathBack}assets/', true));
+			Paths.assetsTree.__defaultLibraries.push(ModsFolder.loadLibraryFromFolder('assets', #if desktop './${pathBack}assets/' #else Sys.getCwd() + '${pathBack}assets/' #end, true));
 		#elseif USE_ADAPTED_ASSETS
-			Paths.assetsTree.__defaultLibraries.push(ModsFolder.loadLibraryFromFolder('assets', './assets/', true));
+			Paths.assetsTree.__defaultLibraries.push(ModsFolder.loadLibraryFromFolder('assets', #if desktop './assets/' #else '${pathBack}assets/' #end, true));
 		#end
 
 
