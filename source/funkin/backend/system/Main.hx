@@ -63,8 +63,6 @@ class Main extends Sprite
 	{
 		super();
 
-        SUtil.gameCrashCheck();
-
 	    #if android
 	    Sys.setCwd(haxe.io.Path.addTrailingSlash(Util.getMobileDirectory()));
 	    #elseif ios
