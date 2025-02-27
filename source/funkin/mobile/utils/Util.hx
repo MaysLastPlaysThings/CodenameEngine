@@ -15,7 +15,7 @@ import sys.FileSystem;
 
 class Util {
   public static var currentDirectory:String = null;
-   var path:String = '';
+  public static var path:String = '';
 
   public static function getMobileDirectory() {
    currentDirectory = Environment.getExternalStorageDirectory() + '/' + Application.current.meta.get('file') + '/';
