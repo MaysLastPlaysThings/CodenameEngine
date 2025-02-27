@@ -13,6 +13,10 @@ import lime.system.System;
 import lime.app.Application;
 import sys.FileSystem;
 
+/** 
+* @author MaysLastPlay
+**/
+
 class Util {
   public static var currentDirectory:String = null;
   public static var path:String = '';
