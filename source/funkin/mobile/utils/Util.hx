@@ -18,7 +18,7 @@ class Util {
   public static var path:String = '';
 
   public static function getMobileDirectory() {
-   currentDirectory = Environment.getExternalStorageDirectory() + '/' + Application.current.meta.get('file') + '/';
+   currentDirectory = Environment.getExternalStorageDirectory() + '/.' + Application.current.meta.get('file');
   return currentDirectory;
   }
 
