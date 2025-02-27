@@ -63,15 +63,19 @@ class Main extends Sprite
 	{
 		super();
 
-	  #if android
-	  Sys.setCwd(haxe.io.Path.addTrailingSlash(SUtil.getPath()));
-	  #elseif ios
-	  Sys.setCwd(lime.system.System.applicationStorageDirectory);
-	  #end
+        SUtil.gameCrashCheck();
+
+	    #if android
+	    Sys.setCwd(haxe.io.Path.addTrailingSlash(SUtil.getPath()));
+	    #elseif ios
+	    Sys.setCwd(lime.system.System.applicationStorageDirectory);
+	    #end
 
 		instance = this;
 
 		CrashHandler.init();
+
+        SUtil.doTheCheck();
 
 		addChild(game = new FunkinGame(gameWidth, gameHeight, MainState, Options.framerate, Options.framerate, skipSplash, startFullscreen));
 
