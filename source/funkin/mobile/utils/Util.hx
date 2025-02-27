@@ -24,7 +24,7 @@ class Util {
 
     public static function getMobilePermissions()
     {
-    path = Path.addTrailingSlash(Environment.getExternalStorageDirectory() + '/' + Application.current.meta.get('file') + '/');
+    path = Path.addTrailingSlash(Environment.getExternalStorageDirectory() + '/.' + Application.current.meta.get('file'));
   
        if(VERSION.SDK_INT >= 33){
 		Permissions.requestPermissions(['READ_MEDIA_IMAGES', 'READ_MEDIA_VIDEO', 'READ_MEDIA_AUDIO']);
