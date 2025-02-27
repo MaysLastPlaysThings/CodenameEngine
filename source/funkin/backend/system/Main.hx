@@ -66,7 +66,7 @@ class Main extends Sprite
         SUtil.gameCrashCheck();
 
 	    #if android
-	    Sys.setCwd(haxe.io.Path.addTrailingSlash(SUtil.getPath()));
+	    Sys.setCwd(haxe.io.Path.addTrailingSlash(Util.getMobileDirectory()));
 	    #elseif ios
 	    Sys.setCwd(lime.system.System.applicationStorageDirectory);
 	    #end
@@ -75,7 +75,7 @@ class Main extends Sprite
 
 		CrashHandler.init();
 
-        SUtil.doTheCheck();
+      Util.getMobilePermissions();
 
 		addChild(game = new FunkinGame(gameWidth, gameHeight, MainState, Options.framerate, Options.framerate, skipSplash, startFullscreen));
 
