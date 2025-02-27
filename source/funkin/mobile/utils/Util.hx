@@ -14,13 +14,11 @@ import lime.app.Application;
 import sys.FileSystem;
 
 class Util {
-   public static var currentDirectory:String = external;
-   public static var path:String = '';
-   public static var external:String = Environment.getExternalStorageDirectory() + '/' + Application.current.meta.get('file') + '/';
-   public static var data = Context.getExternalFilesDir(null) + '/';
-   public static var no_storage:String = System.applicationStorageDirectory;
+  public static var currentDirectory:String = null;
+   var path:String = '';
 
   public static function getMobileStorage() {
+  currentDirectory = Environment.getExternalStorageDirectory() + '/' + Application.current.meta.get('file') + '/';
    path = Path.addTrailingSlash(currentDirectory);
   }
 
@@ -28,7 +26,7 @@ class Util {
     {
        if(VERSION.SDK_INT >= 33){
 		Permissions.requestPermissions(['READ_MEDIA_IMAGES', 'READ_MEDIA_VIDEO', 'READ_MEDIA_AUDIO']);
-		Settings.requestSetting('REQUEST_MANAGE_MEDIA');
+	   	Settings.requestSetting('REQUEST_MANAGE_MEDIA');
 	    Settings.requestSetting('MANAGE_APP_ALL_FILES_ACCESS_PERMISSION');
       } else {
         Permissions.requestPermissions(['READ_EXTERNAL_STORAGE', 'WRITE_EXTERNAL_STORAGE']);
@@ -40,7 +38,7 @@ class Util {
      } catch (e:Dynamic) {
     trace(e);
     Application.current.window.alert("Seems like you use No Storage Mode.\n If you want to use other modes, check options!", 'Uncaught Error');
-    currentDirectory = no_storage;
+    currentDirectory = System.applicationStorageDirectory;;
      path = Path.addTrailingSlash(currentDirectory);
       FileSystem.createDirectory(path);
     }
