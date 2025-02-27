@@ -42,9 +42,9 @@ class Util {
      } catch (e:Dynamic) {
     trace(e);
     Application.current.window.alert("Seems like you use No Storage Mode.\n If you want to use other modes, check options!", 'Uncaught Error');
-    currentDirectory = System.applicationStorageDirectory;
+    /*currentDirectory = System.applicationStorageDirectory;
      path = Path.addTrailingSlash(currentDirectory);
-      FileSystem.createDirectory(path);
+      FileSystem.createDirectory(path);*/
     }
   }
 }
