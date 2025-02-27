@@ -17,13 +17,15 @@ class Util {
   public static var currentDirectory:String = null;
    var path:String = '';
 
-  public static function getMobileStorage() {
-  currentDirectory = Environment.getExternalStorageDirectory() + '/' + Application.current.meta.get('file') + '/';
-   path = Path.addTrailingSlash(currentDirectory);
+  public static function getMobileDirectory() {
+   currentDirectory = Environment.getExternalStorageDirectory() + '/' + Application.current.meta.get('file') + '/';
+  return currentDirectory;
   }
 
-    public static function getPermissions()
+    public static function getMobilePermissions()
     {
+    path = Path.addTrailingSlash(Environment.getExternalStorageDirectory() + '/' + Application.current.meta.get('file') + '/');
+  
        if(VERSION.SDK_INT >= 33){
 		Permissions.requestPermissions(['READ_MEDIA_IMAGES', 'READ_MEDIA_VIDEO', 'READ_MEDIA_AUDIO']);
 	   	Settings.requestSetting('REQUEST_MANAGE_MEDIA');
@@ -38,7 +40,7 @@ class Util {
      } catch (e:Dynamic) {
     trace(e);
     Application.current.window.alert("Seems like you use No Storage Mode.\n If you want to use other modes, check options!", 'Uncaught Error');
-    currentDirectory = System.applicationStorageDirectory;;
+    currentDirectory = System.applicationStorageDirectory;
      path = Path.addTrailingSlash(currentDirectory);
       FileSystem.createDirectory(path);
     }
