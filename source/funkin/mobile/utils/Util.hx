@@ -35,8 +35,8 @@ class Util {
 	  }
 
     try {
-      if(!FileSystem.exists(path))
-        FileSystem.createDirectory(path);
+      if(!FileSystem.exists(Util.getMobileDirectory()))
+        FileSystem.createDirectory(Util.getMobileDirectory());
      } catch (e:Dynamic) {
     trace(e);
     Application.current.window.alert("Seems like you use No Storage Mode.\n If you want to use other modes, check options!", 'Uncaught Error');
