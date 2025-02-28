@@ -22,7 +22,7 @@ class MainState extends FlxState {
 		initiated = true;
 
 		#if sys
-		CoolUtil.deleteFolder('./.temp/'); // delete temp folder
+		CoolUtil.deleteFolder( #if mobile '.temp/' #else './.temp/' #end); // delete temp folder
 		#end
 		Options.save();
 
@@ -67,6 +67,6 @@ class MainState extends FlxState {
 			betaWarningShown = true;
 		}
 
-		CoolUtil.safeAddAttributes('./.temp/', NativeAPI.FileAttribute.HIDDEN);
+		CoolUtil.safeAddAttributes(#if mobile '.temp/' #else './.temp/' #end, NativeAPI.FileAttribute.HIDDEN);
 	}
 }
