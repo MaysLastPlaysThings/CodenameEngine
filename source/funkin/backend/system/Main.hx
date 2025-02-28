@@ -137,8 +137,8 @@ class Main extends Sprite
 		#if (sys && TEST_BUILD)
 			trace("Used cne test / cne build. Switching into source assets.");
 			#if MOD_SUPPORT
-				ModsFolder.modsPath = #if desktop './${pathBack}mods/' #else '${pathBack}mods/' #end;
-				ModsFolder.addonsPath = #if desktop './${pathBack}addons/' #else '${pathBack}addons/' #end;
+				ModsFolder.modsPath = #if desktop './${pathBack}mods/' #else Sys.getCwd() + '${pathBack}mods/' #end;
+				ModsFolder.addonsPath = #if desktop './${pathBack}addons/' #else Sys.getCwd() + '${pathBack}addons/' #end;
 			#end
 			Paths.assetsTree.__defaultLibraries.push(ModsFolder.loadLibraryFromFolder('assets', #if desktop './${pathBack}assets/' #else Sys.getCwd() + '${pathBack}assets/' #end, true));
 		#elseif USE_ADAPTED_ASSETS
