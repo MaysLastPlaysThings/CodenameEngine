@@ -82,7 +82,7 @@ class ModsFolder {
 		#if MOD_SUPPORT
 		if (FileSystem.exists('$path.zip'))
 			return loadLibraryFromZip('$path'.toLowerCase(), '$path.zip', force, modName);
-			elseif (FileSystem.exists('$path'))
+			else if (FileSystem.exists('$path'))
 			return loadLibraryFromFolder('$path'.toLowerCase(), '$path', force, modName);
 
 		#else
