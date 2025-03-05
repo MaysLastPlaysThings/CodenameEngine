@@ -11,8 +11,6 @@ Also, the command `.\cne test` uses the source assets folder instead of the expo
 
 ## Codename Engine
 
- ### WARNING! This mobile port is unofficial! All the credits goes to original Codename Authors.
-
 Codename Engine is a new Friday Night Funkin' Engine aimed at simplifying modding, along with extensiblity and ease of use.<br>
 ### Before making issues or need help with something, check our website [HERE](https://codename-engine.com/) (it contains a wiki of how to mod with EXAMPLES, an api, lists of mods made with Codename Engine and more)!!!
 #### The Engine includes many new features, as seen [here](FEATURES.md)<br>
