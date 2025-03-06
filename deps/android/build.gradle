@@ -1,0 +1,25 @@
+buildscript {
+	repositories {
+		jcenter()
+		google()
+	}
+	dependencies {
+		classpath 'com.android.tools.build:gradle:::ANDROID_GRADLE_PLUGIN::'
+	}
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion Integer.parseInt(project.ANDROID_BUILD_SDK_VERSION)
+    buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
+    compileSdkVersion 30
+    defaultConfig {
+        targetSdkVersion 30
+    }
+}
+
+dependencies {
+    implementation project(':deps:extension-api')
+    implementation 'androidx.core:core:1.2.0'
+}
