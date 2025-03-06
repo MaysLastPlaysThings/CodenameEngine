@@ -73,7 +73,9 @@ class Main extends Sprite
 
 		CrashHandler.init();
 
+        #if mobile
         Util.getMobilePermissions();
+		#end
 
 		addChild(game = new FunkinGame(gameWidth, gameHeight, MainState, Options.framerate, Options.framerate, skipSplash, startFullscreen));
 

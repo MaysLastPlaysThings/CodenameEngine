@@ -127,7 +127,7 @@ class MainMenuState extends MusicBeatState
 			}
 			#end
 
-			if (controls.ACCEPT)
+			if (controls.ACCEPT || TouchInput.justPressed(menuItems.members[curSelected]))
 				selectItem();
 		}
 
