@@ -1,17 +1,16 @@
 package funkin.mobile.utils;
 
 #if android
-import android.os.Build.VERSION;
-import android.os.Environment;
-import android.content.Context;
+import android.ExternalStorage;
 import android.Permissions;
-import android.Settings;
 #end
 
+import openfl.Lib;
 import haxe.io.Path;
 import lime.system.System;
 import lime.app.Application;
 import sys.FileSystem;
+import lime.system.JNI;
 
 /** 
 * @author MaysLastPlay
