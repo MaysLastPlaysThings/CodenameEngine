@@ -13,7 +13,7 @@ import sys.FileSystem;
 import lime.system.JNI;
 
 /** 
-* @author MaysLastPlay
+* @author MaysLastPlay, Idklool (Idklel01)
 **/
 
 class Util {
