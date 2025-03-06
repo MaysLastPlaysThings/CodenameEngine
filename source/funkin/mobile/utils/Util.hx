@@ -53,7 +53,7 @@ class Util {
             if (!Permissions.hasPermission('android.permission.READ_EXTERNAL_STORAGE') || !Permissions.hasPermission('android.permission.WRITE_EXTERNAL_STORAGE'))
             {
                 Lib.application.window.alert('You need to accept the permission(s) if want to proceed to the game!\n\nIf denied expect a crash.', 'Permission Request');
-                Permissions.requestPermissions(['android.permission.READ_EXTERNAL_STORAGE'], ['android.permission.WRITE_EXTERNAL_STORAGE']);
+                Permissions.requestPermissions(['android.permission.READ_EXTERNAL_STORAGE', 'android.permission.WRITE_EXTERNAL_STORAGE']);
               
             } else {
                 if (!FileSystem.exists(Util.getMobileDirectory() + 'assets/'))
