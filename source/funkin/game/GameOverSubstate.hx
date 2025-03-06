@@ -100,7 +100,7 @@ class GameOverSubstate extends MusicBeatSubstate
 		if (__cancelDefault)
 			return;
 
-		if (controls.ACCEPT || TouchInput.justPressed(characterName)) endBullshit();
+		if (controls.ACCEPT) endBullshit();
 		if (controls.BACK) exit();
 
 		if (!isEnding && ((!lossSFX.playing) || (character.getAnimName() == "firstDeath" && character.isAnimFinished())) && (FlxG.sound.music == null || !FlxG.sound.music.playing))
