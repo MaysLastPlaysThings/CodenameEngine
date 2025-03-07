@@ -131,7 +131,7 @@ class PauseSubState extends MusicBeatSubstate
 		if (upP || downP || scroll != 0)  // like this we wont break mods that expect a 0 change event when calling sometimes  - Nex
 			changeSelection((upP ? -1 : 0) + (downP ? 1 : 0) - scroll);
 
-		if (controls.ACCEPT)
+		if (controls.ACCEPT || TouchInput.justPressed(grpMenuShit.members[curSelected]))
 			selectOption();
 	}
 
