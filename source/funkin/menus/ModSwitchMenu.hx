@@ -41,7 +41,7 @@ class ModSwitchMenu extends MusicBeatSubstate {
 
 		changeSelection((controls.DOWN_P ? 1 : 0) + (controls.UP_P ? -1 : 0) - FlxG.mouse.wheel);
 
-		if (controls.ACCEPT) {
+		if (controls.ACCEPT || TouchInput.justPressed(alphabets.members[curSelected])) {
 			ModsFolder.switchMod(mods[curSelected]);
 			close();
 		}
