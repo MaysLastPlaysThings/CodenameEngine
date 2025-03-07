@@ -265,7 +265,7 @@ class FreeplayState extends MusicBeatState
 			convertChart();
 		#end
 
-		if (controls.ACCEPT #if PRELOAD_ALL && !dontPlaySongThisFrame #end)
+		if (controls.ACCEPT || TouchInput.justPressed(grpSongs.members[curSelected]) #if PRELOAD_ALL && !dontPlaySongThisFrame #end)
 			select();
 	}
 
