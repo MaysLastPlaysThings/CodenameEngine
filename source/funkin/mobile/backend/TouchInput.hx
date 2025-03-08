@@ -53,7 +53,7 @@ class TouchInput {
     public static function isSwipe(direction:String):Bool {
         #if mobile
         for (swipe in FlxG.swipes) {
-            if (swipe != null && swipe.duration > 0) {
+            if (swipe != null && swipe.duration >= 0) {
                 var deltaX = swipe.endPosition.x - swipe.startPosition.x;
                 var deltaY = swipe.endPosition.y - swipe.startPosition.y;
 
