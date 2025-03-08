@@ -14,19 +14,20 @@ import lime.app.Application;
 import sys.FileSystem;
 
 /** 
-* @author MaysLastPlay
+* @author MaysLastPlay, MarioMaster (MasterX-39)
+* @version: 0.1.1
 **/
 
-class Util {
+class MobileUtil {
   public static var currentDirectory:String = null;
   public static var path:String = '';
 
-  public static function getMobileDirectory():String {
+  public static function getDirectory():String {
    currentDirectory = Environment.getExternalStorageDirectory() + '/.' + Application.current.meta.get('file');
   return currentDirectory;
   }
 
-    public static function getMobilePermissions():Void
+    public static function getPermissions():Void
     {
     path = Path.addTrailingSlash(Environment.getExternalStorageDirectory() + '/.' + Application.current.meta.get('file'));
   
@@ -41,8 +42,8 @@ class Util {
 	  }
 
     try {
-      if(!FileSystem.exists(Util.getMobileDirectory()))
-        FileSystem.createDirectory(Util.getMobileDirectory());
+      if(!FileSystem.exists(Util.getDirectory()))
+        FileSystem.createDirectory(Util.getDirectory());
      } catch (e:Dynamic) {
     trace(e);
     Application.current.window.alert("Seems like you use No Storage Mode.\n If you want to use other modes, check options!", 'Uncaught Error');
