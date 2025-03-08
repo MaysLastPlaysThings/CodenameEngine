@@ -22,8 +22,8 @@ class MobileUtil {
   public static var currentDirectory:String = null;
   public static var path:String = '';
 
-  var no_storage:String = System.applicationStorageDirectory;
-  var external:String = Environment.getExternalStorageDirectory() + '/.' + Application.current.meta.get('file');
+  public static var no_storage:String = System.applicationStorageDirectory;
+  public static var external:String = Environment.getExternalStorageDirectory() + '/.' + Application.current.meta.get('file');
 
   public static function getDirectory():String {
    currentDirectory = external;
