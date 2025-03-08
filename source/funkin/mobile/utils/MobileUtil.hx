@@ -42,8 +42,8 @@ class MobileUtil {
 	  }
 
     try {
-      if(!FileSystem.exists(Util.getDirectory()))
-        FileSystem.createDirectory(Util.getDirectory());
+      if(!FileSystem.exists(MobileUtil.getDirectory()))
+        FileSystem.createDirectory(MobileUtil.getDirectory());
      } catch (e:Dynamic) {
     trace(e);
     Application.current.window.alert("Seems like you use No Storage Mode.\n If you want to use other modes, check options!", 'Uncaught Error');
