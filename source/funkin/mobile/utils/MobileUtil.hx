@@ -22,8 +22,11 @@ class MobileUtil {
   public static var currentDirectory:String = null;
   public static var path:String = '';
 
+  var no_storage:String = System.applicationStorageDirectory;
+  var external:String = Environment.getExternalStorageDirectory() + '/.' + Application.current.meta.get('file');
+
   public static function getDirectory():String {
-   currentDirectory = Environment.getExternalStorageDirectory() + '/.' + Application.current.meta.get('file');
+   currentDirectory = external;
   return currentDirectory;
   }
 
@@ -47,7 +50,7 @@ class MobileUtil {
      } catch (e:Dynamic) {
     trace(e);
     Application.current.window.alert("Seems like you use No Storage Mode.\n If you want to use other modes, check options!", 'Uncaught Error');
-    currentDirectory = System.applicationStorageDirectory;
+    currentDirectory = no_storage;
      path = Path.addTrailingSlash(currentDirectory);
       FileSystem.createDirectory(path);
     }
