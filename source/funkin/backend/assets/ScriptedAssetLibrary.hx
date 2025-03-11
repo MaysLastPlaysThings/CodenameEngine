@@ -22,7 +22,7 @@ class ScriptedAssetLibrary extends ModsFolderLibrary {
 	private static var nullValue:Dynamic = {};
 
 	public function new(scriptName:String, args:Array<Dynamic> = null, folderPath:String, libName:String="assets", ?modName:String) {
-		if (folderPath == '') folderPath = #if desktop "./assets/" #else Sys.getCwd() + "assets/" #end;
+		if (folderPath == '') folderPath = #if desktop "./assets/" #else "assets/" #end;
 		if(modName == null) modName = scriptName;
 		super(folderPath, libName, modName);
 		this.scriptName = scriptName;
