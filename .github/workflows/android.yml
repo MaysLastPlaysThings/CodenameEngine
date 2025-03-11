@@ -92,6 +92,7 @@ jobs:
             export/release/android/obj/
           restore-keys: |
             cache-build-android
+  build-debug:
     name: Android Build Debug
     permissions: write-all
     runs-on: ubuntu-latest
