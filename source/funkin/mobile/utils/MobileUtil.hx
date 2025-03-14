@@ -24,8 +24,9 @@ class MobileUtil {
 
   public static function getDirectory():String {
    #if android
-   currentDirectory = Path.addTrailingSlash(Environment.getExternalStorageDirectory() + '/.' + Application.current.meta.get('file'));
-   #end
+   currentDirectory = Environment.getExternalStorageDirectory() + '/.' + Application.current.meta.get('file');
+   #elseif ios
+   currentDirectory = System.applicationStorageDirectory;
   return currentDirectory;
   }
 
@@ -53,8 +54,6 @@ class MobileUtil {
     currentDirectory = System.applicationStorageDirectory;
      path = Path.addTrailingSlash(currentDirectory);
       FileSystem.createDirectory(path);*/
-      Application.current.window.alert('Seems like you didnt accepted permissions. Please accept them to be able to play the game!', 'Uncaught Error');
-      Sys.exit(1);
     }
   }
   #end
