@@ -22,14 +22,16 @@ class MobileUtil {
   public static var currentDirectory:String = null;
   public static var path:String = '';
 
-  public static var no_storage:String = System.applicationStorageDirectory;
-  public static var external:String = Environment.getExternalStorageDirectory() + '/.' + Application.current.meta.get('file');
-
   public static function getDirectory():String {
-   currentDirectory = external;
+   #if android
+   currentDirectory = Path.addTrailingSlash(Environment.getExternalStorageDirectory() + '/.' + Application.current.meta.get('file'));
+   #elseif ios
+   currentDirectory = System.applicationStorageDirectory;
+   #end
   return currentDirectory;
   }
 
+    #if android
     public static function getPermissions():Void
     {
     path = Path.addTrailingSlash(Environment.getExternalStorageDirectory() + '/.' + Application.current.meta.get('file'));
@@ -50,9 +52,10 @@ class MobileUtil {
      } catch (e:Dynamic) {
     trace(e);
     Application.current.window.alert("Seems like you use No Storage Mode.\n If you want to use other modes, check options!", 'Uncaught Error');
-    currentDirectory = no_storage;
+    currentDirectory = System.applicationStorageDirectory;
      path = Path.addTrailingSlash(currentDirectory);
       FileSystem.createDirectory(path);
     }
   }
+  #end
 }
