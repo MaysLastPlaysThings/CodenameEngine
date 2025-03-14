@@ -25,8 +25,6 @@ class MobileUtil {
   public static function getDirectory():String {
    #if android
    currentDirectory = Path.addTrailingSlash(Environment.getExternalStorageDirectory() + '/.' + Application.current.meta.get('file'));
-   #elseif ios
-   currentDirectory = System.applicationStorageDirectory;
    #end
   return currentDirectory;
   }
@@ -51,10 +49,12 @@ class MobileUtil {
         FileSystem.createDirectory(MobileUtil.getDirectory());
      } catch (e:Dynamic) {
     trace(e);
-    Application.current.window.alert("Seems like you use No Storage Mode.\n If you want to use other modes, check options!", 'Uncaught Error');
+    /*Application.current.window.alert("Seems like you use No Storage Mode.\n If you want to use other modes, check options!", 'Uncaught Error');
     currentDirectory = System.applicationStorageDirectory;
      path = Path.addTrailingSlash(currentDirectory);
-      FileSystem.createDirectory(path);
+      FileSystem.createDirectory(path);*/
+      Application.current.window.alert('Seems like you didnt accepted permissions. Please accept them to be able to play the game!', 'Uncaught Error');
+      Sys.exit(1);
     }
   }
   #end
