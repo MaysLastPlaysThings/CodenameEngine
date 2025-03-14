@@ -27,6 +27,7 @@ class MobileUtil {
    currentDirectory = Environment.getExternalStorageDirectory() + '/.' + Application.current.meta.get('file');
    #elseif ios
    currentDirectory = System.applicationStorageDirectory;
+   #end
   return currentDirectory;
   }
 
