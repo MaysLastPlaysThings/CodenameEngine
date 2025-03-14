@@ -60,10 +60,12 @@ class AssetsLibraryList extends AssetLibrary {
 
 			// TODO: do base folder scanning
 			#if MOD_SUPPORT
+			if (source == MODS || source == SOURCE) {
 		  	if (l is IModsAssetLibrary) {
 				 var lib = cast(l, IModsAssetLibrary);
 			  	for(e in lib.getFiles(folder))
 				  	content.push(e);
+			 }
 			}
 			#end
 		}
@@ -84,10 +86,12 @@ class AssetsLibraryList extends AssetLibrary {
 
 			// TODO: do base folder scanning
 			#if MOD_SUPPORT
+			if (source == MODS || source == SOURCE) {
 		  	if (l is IModsAssetLibrary) {
 				 var lib = cast(l, IModsAssetLibrary);
 			  	for(e in lib.getFiles(folder))
 				  	content.push(e);
+			 }
 			}
 			#end
 		}
