@@ -111,7 +111,7 @@ class ModsFolder {
 			}
 		}
 		#end
-		return mods;
+		return Sys.getCwd() + mods;
 	}
 	public static function getLoadedMods():Array<String> {
 		var libs = [];
