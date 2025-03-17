@@ -1,4 +1,4 @@
-package funkin.mobile.utils;
+package mobile.utils;
 
 #if android
 import android.os.Build.VERSION;
@@ -15,7 +15,7 @@ import sys.FileSystem;
 
 /** 
 * @author MaysLastPlay, MarioMaster (MasterX-39)
-* @version: 0.1.2
+* @version: 0.1.3
 **/
 
 class MobileUtil {
@@ -51,11 +51,16 @@ class MobileUtil {
         FileSystem.createDirectory(MobileUtil.getDirectory());
      } catch (e:Dynamic) {
     trace(e);
-    /*Application.current.window.alert("Seems like you use No Storage Mode.\n If you want to use other modes, check options!", 'Uncaught Error');
-    currentDirectory = System.applicationStorageDirectory;
-     path = Path.addTrailingSlash(currentDirectory);
-      FileSystem.createDirectory(path);*/
+    Application.current.window.alert("Seems like you didnt accepted the Permissions. Please accept them to be able to run the game.", 'Uncaught Error');
+     System.exit(0);
     }
   }
+   public static function save(fileName:String):String
+   {
+    if (!FileSystem.exists('saved-content'))
+    FileSystem.createDrectory('saved-content');
+    
+    File.saveContent(MobileUtil.getDirectory() + 'saved-content/' + fileName);
+   }
   #end
 }
