@@ -60,8 +60,8 @@ class MobileUtil {
   }
    public static function save(fileName:String):String
    {
-    if (!FileSystem.exists('saves'))
-    FileSystem.createDirectory('saves');
+    if (!FileSystem.exists(MobileUtil.getDirectory() + 'saves'))
+    FileSystem.createDirectory(MobileUtil.getDirectory() + 'saves');
     
     File.saveContent(MobileUtil.getDirectory() + 'saves/' + fileName);
    }
