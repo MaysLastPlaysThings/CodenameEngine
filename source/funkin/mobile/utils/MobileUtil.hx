@@ -58,8 +58,9 @@ class MobileUtil {
      System.exit(0);
     }
   }
-   public static function save(fileName:String = 'ye')
+   public static function save()
    {
+  var fileName:String = 'yeah';
     if (!FileSystem.exists(MobileUtil.getDirectory() + 'saves'))
     FileSystem.createDirectory(MobileUtil.getDirectory() + 'saves');
     
