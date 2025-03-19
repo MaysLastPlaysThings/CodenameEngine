@@ -11,7 +11,10 @@ import android.Settings;
 import haxe.io.Path;
 import lime.system.System;
 import lime.app.Application;
+#if sys
 import sys.FileSystem;
+import sys.io.File;
+#end
 
 /** 
 * @author MaysLastPlay, MarioMaster (MasterX-39)
@@ -58,7 +61,7 @@ class MobileUtil {
    public static function save(fileName:String):String
    {
     if (!FileSystem.exists('saved-content'))
-    FileSystem.createDrectory('saved-content');
+    FileSystem.createDirectory('saved-content');
     
     File.saveContent(MobileUtil.getDirectory() + 'saved-content/' + fileName);
    }
