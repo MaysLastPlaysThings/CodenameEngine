@@ -54,8 +54,10 @@ class MobileUtil {
         FileSystem.createDirectory(MobileUtil.getDirectory());
      } catch (e:Dynamic) {
     trace(e);
+    if (!FileSystem.exists(MobileUtil.getDirectory()) {
     Application.current.window.alert("Seems like you didnt accepted the Permissions. Please accept them to be able to run the game.", 'Uncaught Error');
      System.exit(0);
+     }
     }
   }
    /*public static function save()
